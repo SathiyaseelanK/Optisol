@@ -1,0 +1,433 @@
+:root {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'muli', sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+.header {
+    transition: all 0.5s;
+    z-index: 997;
+    padding: 20px 0;
+    background: #fff;
+}
+
+.header.header-scrolled {
+    background: #fff;
+    padding: 15px 0;
+    box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
+}
+
+.header .logo {
+    line-height: 0;
+}
+
+.header .logo img {
+    width: 148px;
+    height: 58px;
+}
+
+.header .logo span {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #012970;
+    font-family: "Nunito", sans-serif;
+    margin-top: 3px;
+}
+
+
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/**
+* Desktop Navigation 
+*/
+.navbar {
+    padding: 0;
+}
+
+.navbar ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.navbar li {
+    position: relative;
+}
+
+.navbar a,
+.navbar a:focus {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0 10px 30px;
+    font: normal normal normal 14px/20px Muli;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1E202F;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+.navbar a i,
+.navbar a:focus i {
+    font: normal normal normal 14px/20px Muli;
+}
+
+.navbar a:hover,
+.navbar .active,
+.navbar .active:focus,
+.navbar li:hover>a {
+    font: normal normal normal Muli;
+    letter-spacing: 0.5px;
+    color: #1E202F;
+}
+
+.navbar .getstarted,
+.navbar .getstarted:focus {
+    border: 1px solid #4099F1;
+    padding: 8px 20px;
+    margin-left: 30px;
+    text-align: center;
+    font-family: "Muli";
+    color: #4099F1;
+}
+
+
+/**
+  * Mobile Navigation 
+  */
+.mobile-nav-toggle.material-icons {
+    color: #012970;
+    font-size: 28px;
+    cursor: pointer;
+    display: none;
+    line-height: 0;
+    transition: 0.5s;
+}
+
+.mobile-nav-toggle.material-icons.bi-x {
+    color: #fff;
+}
+
+@media (max-width: 991px) {
+    .mobile-nav-toggle.material-icons {
+        display: block;
+    }
+
+    .navbar ul {
+        display: none;
+    }
+}
+
+.navbar-mobile {
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(1, 22, 61, 0.9);
+    transition: 0.3s;
+}
+
+.navbar-mobile .mobile-nav-toggle.material-icons {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.navbar-mobile ul {
+    display: block;
+    position: absolute;
+    top: 55px;
+    right: 15px;
+    bottom: 15px;
+    left: 15px;
+    padding: 10px 0;
+    border-radius: 10px;
+    background-color: #fff;
+    overflow-y: auto;
+    transition: 0.3s;
+}
+
+.navbar-mobile a,
+.navbar-mobile a:focus {
+    padding: 10px 20px;
+    font-size: 15px;
+    color: #012970;
+}
+
+.navbar-mobile a:hover,
+.navbar-mobile .active,
+.navbar-mobile li:hover>a {
+    color: #4154f1;
+}
+
+.navbar-mobile .getstarted,
+.navbar-mobile .getstarted:focus {
+    margin: 15px;
+}
+
+.navbar-mobile .dropdown ul {
+    position: static;
+    display: none;
+    margin: 10px 20px;
+    padding: 10px 0;
+    z-index: 99;
+    opacity: 1;
+    visibility: visible;
+    background: #fff;
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+}
+
+.navbar-mobile .dropdown ul li {
+    min-width: 200px;
+}
+
+.navbar-mobile .dropdown ul a {
+    padding: 10px 20px;
+}
+
+.navbar-mobile .dropdown ul a i {
+    font-size: 12px;
+}
+
+.navbar-mobile .dropdown ul a:hover,
+.navbar-mobile .dropdown ul .active:hover,
+.navbar-mobile .dropdown ul li:hover>a {
+    color: #4154f1;
+}
+
+.navbar-mobile .dropdown>.dropdown-active {
+    display: block;
+}
+
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+.hero {
+    width: 100%;
+    height: 100vh;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+}
+
+.hero-font {
+    text-align: left;
+    font: normal normal bold 64px/90px Merriweather;
+    letter-spacing: 0.45px;
+    color: #1E202F;
+}
+
+.btn-read-more {
+    background: #4099F1 0% 0% no-repeat padding-box;
+    opacity: 1;
+    padding: 15px 20px;
+    font: normal normal normal 14px/20px Muli;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 48px;
+    font-weight: 700;
+    color: #012970;
+}
+
+.hero h2 {
+    color: #444444;
+    margin: 15px 0 0 0;
+    font-size: 26px;
+}
+
+.hero .btn-get-started {
+    margin-top: 30px;
+    line-height: 0;
+    padding: 15px 40px;
+    border-radius: 4px;
+    transition: 0.5s;
+    color: #fff;
+    background: #4154f1;
+    box-shadow: 0px 5px 30px rgba(65, 84, 241, 0.4);
+}
+
+.hero .btn-get-started span {
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.hero .btn-get-started i {
+    margin-left: 5px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.hero .btn-get-started:hover i {
+    transform: translateX(5px);
+}
+
+.hero .hero-img {
+    text-align: right;
+}
+
+@media (min-width: 1024px) {
+    .hero {
+        background-attachment: fixed;
+    }
+}
+
+@media (max-width: 991px) {
+    .hero {
+        height: auto;
+        padding: 120px 0 60px 0;
+    }
+
+    .hero .hero-img {
+        text-align: center;
+        margin-top: 80px;
+    }
+
+    .hero .hero-img img {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero h2 {
+        font-size: 24px;
+    }
+
+    .hero .hero-img img {
+        width: 100%;
+    }
+}
+
+/*--------------------------------------------------------------
+# Values
+--------------------------------------------------------------*/
+
+.value-subheader {
+    text-align: left;
+    font: normal normal bold 14px/26px Muli;
+    letter-spacing: 1px;
+    color: #4099F1;
+}
+
+.value-header {
+    text-align: left;
+    font: normal normal bold 32px/42px Merriweather;
+    letter-spacing: 0.5px;
+    color: #1E202F;
+}
+
+.values .box {
+    padding: 30px;
+    box-shadow: 0px 0 5px rgba(1, 41, 112, 0.08);
+    text-align: center;
+    transition: 0.3s;
+    height: 100%;
+}
+
+.values .box img {
+    padding: 30px 50px;
+    transition: 0.5s;
+    transform: scale(1.1);
+}
+
+.values .box h3 {
+    font-size: 24px;
+    color: #012970;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.values .box:hover {
+    box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
+}
+
+.values .box:hover img {
+    transform: scale(1);
+}
+
+.card-img-top {
+    height: 350px;
+    width: auto;
+    background-size: cover;
+}
+
+.card-title {
+    text-align: left;
+    font: normal normal 900 20px/30px Merriweather;
+    letter-spacing: 0.42px;
+    color: #1E202F;
+}
+
+.card-text {
+    text-align: left;
+    font: normal normal normal 12px/23px Muli;
+    letter-spacing: 0.24px;
+    color: #888990;
+}
+
+.card {
+    height: 490px;
+}
+
+.footer {
+    padding:40px
+}
+
+.footer-text {
+    text-align: right;
+font: normal normal normal 16px/26px Muli;
+letter-spacing: 0.5px;
+color: #82868A;
+}
+
+.profile {
+    width: 250px;
+    margin-top: -89px;
+    background: white;
+    margin-left: -18px;
+}
+
+.profile-header {
+    text-align: left;
+    font: normal normal bold 12px/30px Merriweather;
+    letter-spacing: 0.25px;
+    color: #1E202F;
+}
+
+.profile-subheader {
+    text-align: left;
+    font: normal normal 300 8px/26px Muli;
+    letter-spacing: 0.25px;
+    color: #B2B2B2;
+}
