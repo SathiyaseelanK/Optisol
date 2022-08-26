@@ -1,0 +1,33 @@
+<div class="p-3 pr-5 m-4">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+                <th scope="col">View</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of userList">
+                <td>{{user.firstName + " " + user.lastName}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.phoneNumber}}</td>
+                <td>
+                    <button type="button" class="btn btn-prim fw-bold btn-sm"
+                    (click)="onEditUser(user)">Edit</button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-danger fw-bold btn-sm"
+                    (click)="onDeleteUser(user._id)">Delete</button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-dark fw-bold btn-sm"
+                    (click)="onViewUser(user)">View</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

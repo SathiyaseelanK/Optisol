@@ -1,0 +1,146 @@
+<div class="p-3 pr-5 m-4">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-12">
+                <p class="fs-3 fw-bold">BIO DATA</p>
+            </div>
+            <div class="col-md-6 mt-2">
+                <label for="firstName" class="form-label fw-bold">FIRST NAME
+                    <span class="text-danger ml-1 fs=5">*</span>
+                </label>
+                <input type="text" class="form-control" placeholder="First" formControlName="firstName"
+                [ngClass]="{ 
+                    'is-invalid': uForm['firstName'].touched && uForm['firstName'].errors ,
+                    'is-valid': uForm['firstName'].touched && !uForm['firstName'].errors
+                }"    
+                id="firstName">
+                <div *ngIf="uForm['firstName'].touched && uForm['firstName'].errors" class="invalid-feedback">
+                    <div *ngIf="uForm['firstName']['errors']required">First name is required</div>
+                </div>
+            </div>
+            <div class="col-md-6 mt-2">
+                <label for="firstName" class="form-label fw-bold">LAST NAME
+                    <span class="text-danger ml-1 fs=5">*</span>
+                </label>
+                <input type="text" class="form-control" placeholder="Last" formControlName="lastName" [ngClass]="{ 
+                    'is-invalid': uForm['lastName'].touched && uForm['lastName'].errors ,
+                    'is-valid': uForm['lastName'].touched && !uForm['lastName'].errors
+                }" id="lastName">
+                 <div *ngIf="uForm['lastName'].touched && uForm['lastName'].errors" class="invalid-feedback">
+                    <div *ngIf="uForm['lastName']['errors']required">Last name is required</div>
+                </div>
+            </div>
+            <div class="col-md-12 mt-2">
+                <label for="email" class="form-label fw-bold">EMAIL
+                    <span class="text-danger ml-1 fs=5">*</span>
+                </label>
+                <input type="email" class="form-control" placeholder="E-mail" formControlName="email" [ngClass]="{ 
+                    'is-invalid': uForm['email'].touched && uForm['email'].errors ,
+                    'is-valid': uForm['email'].touched && !uForm['email'].errors
+                }" id="email">
+                <div *ngIf="uForm['email'].touched && uForm['email'].errors" class="invalid-feedback">
+                    <div *ngIf="uForm['email']['errors']required">Email is required</div>
+                </div>
+            </div>
+            <div class="col-md-12 mt-2">
+                <label for="phoneNumber" class="form-label fw-bold">PHONE NUMBER 
+                    <span class="text-danger ml-1 fs=5">*</span>
+                </label>
+                <input type="number" class="form-control"  [ngClass]="{ 
+                    'is-invalid': uForm['phoneNumber'].touched && uForm['phoneNumber'].errors ,
+                    'is-valid': uForm['phoneNumber'].touched && !uForm['phoneNumber'].errors
+                }" id="phoneNumber" formControlName="phoneNumber">
+                 <div *ngIf="uForm['phoneNumber'].touched && uForm['phoneNumber'].errors" class="invalid-feedback">
+                    <div *ngIf="uForm['phoneNumber']['errors']required">Phone number is required</div>
+                    <div *ngIf="uForm['phoneNumber']['errors']pattern">Phone number is not valid</div>
+                </div>
+            </div>
+            <div class="col-md-12 mt-2">
+                <label for="address1" class="form-label fw-bold">ADDRESS
+                    <span class="text-danger ml-1 fs=5">*</span>
+                </label>
+                <input type="text" class="form-control" placeholder="Line 1" formControlName="address1" [ngClass]="{ 
+                    'is-invalid': uForm['address1'].touched && uForm['address1'].errors ,
+                    'is-valid': uForm['address1'].touched && !uForm['address1'].errors
+                }" id="address1">
+                <div *ngIf="uForm['address1'].touched && uForm['address1'].errors" class="invalid-feedback">
+                    <div *ngIf="uForm['address1']['errors']required">Line 1 is required</div>
+                </div>
+                <input type="text" class="form-control mt-2" placeholder="Line 2" formControlName="address2" [ngClass]="{ 
+                    'is-invalid': uForm['address2'].touched && uForm['address2'].errors ,
+                    'is-valid': uForm['address2'].touched && !uForm['address2'].errors
+                }" id="address2">
+                <div *ngIf="uForm['address2'].touched && uForm['address2'].errors" class="invalid-feedback">
+                    <div *ngIf="uForm['address2']['errors']required">Line 2 is required</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="text" class="form-control mt-2" placeholder="City" formControlName="city" [ngClass]="{ 
+                    'is-invalid':  uForm['city'].touched && uForm['city'].errors ,
+                    'is-valid':  uForm['city'].touched && !uForm['city'].errors
+                }" id="city">
+                <div *ngIf=" uForm['city'].touched && uForm['city'].errors" class="invalid-feedback">
+                    <div *ngIf="uForm['city']['errors']required">City is required</div>
+                </div>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control mt-2" placeholder="State" formControlName="state" [ngClass]="{ 
+                    'is-invalid': uForm['state'].touched && uForm['state'].errors ,
+                    'is-valid': uForm['state'].touched && !uForm['state'].errors
+                }" id="state">
+                <div *ngIf="uForm['state'].touched && uForm['state'].errors" class="invalid-feedback">
+                    <div *ngIf="uForm['state']['errors']required">State is required</div>
+                </div>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="number" class="form-control mt-2" placeholder="Zip Code" formControlName="zipCode" [ngClass]="{ 
+                    'is-invalid': uForm['zipCode'].touched  && uForm['zipCode'].errors ,
+                    'is-valid': uForm['zipCode'].touched  && !uForm['zipCode'].errors
+                }" id="zipCode">
+                <div *ngIf="uForm['zipCode'].touched  && uForm['zipCode'].errors" class="invalid-feedback">
+                    <div *ngIf="uForm['zipCode']['errors']required">Zip Code is required</div>
+                    <div *ngIf="uForm['zipCode']['errors']pattern">Zip Code is not valid</div>
+                </div>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control mt-2" placeholder="Country" formControlName="country" [ngClass]="{ 
+                    'is-invalid': uForm['country'].touched && uForm['country'].errors ,
+                    'is-valid': uForm['country'].touched && !uForm['country'].errors
+                }" id="country">
+                 <div *ngIf="uForm['country'].touched && uForm['country'].errors" class="invalid-feedback">
+                    <div *ngIf="uForm['country']['errors']required">Country is required</div>
+                </div>
+                    </div>
+                </div>
+                <div class="col-md-12 mt-2">
+                    <label for="qualification" class="form-label fw-bold">WRITE YOUR QUALIFICATION
+                        <span class="text-danger ml-1 fs=5">*</span>
+                    </label>
+                    <input type="text" class="form-control" formControlName="qualification" [ngClass]="{ 
+                        'is-invalid': uForm['qualification'].touched && uForm['qualification'].errors ,
+                        'is-valid': uForm['qualification'].touched && !uForm['qualification'].errors
+                    }" id="qualification">
+                     <div *ngIf="uForm['qualification'].touched && uForm['qualification'].errors" class="invalid-feedback">
+                    <div *ngIf="uForm['qualification']['errors']required">Qualification is required</div>
+                </div>
+                </div>
+                <div class="col-md-12 mt-2">
+                    <label for="comments" class="form-label fw-bold">COMMENTS
+                        <span class="text-danger ml-1 fs=5">*</span>
+                    </label>
+                    <input type="text" class="form-control" formControlName="comments" [ngClass]="{ 
+                        'is-invalid':  uForm['qualification'].touched && uForm['comments'].errors ,
+                        'is-valid':  uForm['comments'].touched && !uForm['comments'].errors
+                    }" id="comments">
+                     <div *ngIf=" uForm['comments'].touched && uForm['comments'].errors" class="invalid-feedback">
+                    <div *ngIf="uForm['comments']['errors']required">Comments is required</div>
+                </div>
+                </div>
+                <div class="col-md-12 d-grid  mt-2">
+                    <input type="submit" class="btn btn-dark fw-bold"
+                    [value]="submitText" [disabled]="userForm.invalid">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

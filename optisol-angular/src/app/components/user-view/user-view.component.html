@@ -1,0 +1,35 @@
+
+<div mat-dialog-content *ngIf="data">
+        <div class="row " >
+            <div class="col-12">
+                <h5 class="fs-4">{{data.firstName+ ' ' + data.lastName}}</h5>
+            </div>
+            <div class="col-6">
+                Email
+            </div>
+            <div class="col-6">
+                {{data.email}}
+            </div>
+            <div class="col-6">
+                Phone Number
+            </div>
+            <div class="col-6">
+                {{data.phoneNumber}}
+            </div>
+            <div class="col-6">Qualification</div>
+            <div class="col-6">
+                {{data.qualification}}
+            </div>
+            <div class="col-6">Address</div>
+            <div class="col-6">
+                {{data.address1 + data.address2 + data.city + data.state + data.zipCode + data.country}}
+            </div>
+            <div class="col-6">Comments</div>
+            <div class="col-6">
+                {{data.comments}}
+            </div>
+        </div>
+</div>
+<div mat-dialog-actions>
+    <button class="btn btn-light" (click)="closeDialog()">Close</button>
+</div>
